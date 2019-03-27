@@ -1,0 +1,43 @@
+﻿@model Datos;
+@{
+    ViewData["Title"] = "Calculadora";
+}
+
+<h1 class="lead">Calculadora</h1>
+<hr />
+
+<form asp-controller="Numeros" asp-action="Calculadora" method="post">
+
+    <div class="form-group">
+        <label asp-for="Numero1">Primer numero:</label>
+        <input asp-for="Numero1" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Numero2">Segundo numero:</label>
+        <input asp-for="Numero2" class="form-control" />
+    </div>
+
+    <div>
+        @Html.DropDownList("Operacion", new List<SelectListItem>
+        {
+           new SelectListItem{Text = "Suma", Value = "0"},
+           new SelectListItem{Text = "Resta", Value = "1"},
+           new SelectListItem{Text = "Multiplicación", Value = "2"},
+           new SelectListItem{Text = "División", Value = "3"}
+        }, "Seleccione una operación.", new { @class = "form-control" })
+    <br />
+    <input type="submit" class="btn btn-success" />
+    </div>
+    <br />
+    <div>
+        <p>
+            @ViewData["Resultado"]
+        </p>
+    </div>
+
+    
+</form>
+
+
+

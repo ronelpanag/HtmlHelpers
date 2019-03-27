@@ -1,0 +1,19 @@
+﻿@model Persona;
+@{
+    ViewData["Title"] = "Formulario";
+}
+
+<div class="jumbotron">
+    <h2>Formulario</h2>
+    <hr />
+
+    <form asp-controller="Personas" asp-action="Formulario" method="post">
+        <div class="form-group">
+            <label asp-for="Cedula"></label>
+            <input asp-for="Cedula" class="form-control"/>
+        </div>
+            <div></div>
+    </form>
+</div>
+
+

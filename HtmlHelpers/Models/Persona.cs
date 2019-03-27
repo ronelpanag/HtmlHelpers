@@ -7,14 +7,14 @@ namespace HtmlHelpers.Models
 {
     public class Persona
     {
-        string Cedula { get; set; }
-        string Nombre { get; set; }
-        string Apellido { get; set; }
-        int Edad { get; set; }
-        string Telefono { get; set; }
-        string CorreoElectronico { get; set; }
-        string Genero { get; set; }
-        string EstadoCivil { get; set; }
-        string Hobby { get; set; }
+        public string Cedula { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public int Edad { get; set; }
+        public string Telefono { get; set; }
+        public string CorreoElectronico { get; set; }
+        public string Genero { get; set; }
+        public string EstadoCivil { get; set; }
+        public string Hobby { get; set; }
     }
 }

@@ -1,7 +1,46 @@
-﻿
+﻿@model Persona;
 @{
     ViewData["Title"] = "Resultado";
 }
 
-<h2>Resultado</h2>
+<h2 class="display-4">
+    @ViewData["Resultado"]
+</h2>
+<hr />
+<div class="flex-xl-row">
+    <b>Nombre: </b> <i>@Model.Nombre</i>
+</div>
+<div class="flex-xl-row">
+    <b>Edad: </b> <i>@Model.Edad</i>
+</div>
+<div class="flex-xl-row">
+    <b>Apellido: </b> <i>@Model.Apellido</i>
+</div>
+<div class="flex-xl-row">
+    <b>Correo electronico: </b> <i>@Model.CorreoElectronico</i>
+</div>
+<div class="flex-xl-row">
+    <b>Edad: </b> <i>@Model.Edad</i>
+</div>
+<div class="flex-xl-row">
+    <b>Estado civil: </b> <i>@Model.EstadoCivil</i>
+</div>
+<div class="flex-xl-row">
+    <b>Telefono: </b> <i>@Model.Telefono</i>
+</div>
+<div class="flex-xl-row">
+    <b>Apellido: </b> <i>@Model.Genero</i>
+</div>
+<div class="flex-xl-row">
+    <b>Hobby o Hobbies: </b> 
+    <ul>
+        <li><i>@ViewData["Hobby1"]</i></li>
+        <li><i>@ViewData["Hobby2"]</i></li>
+        <li><i>@ViewData["Hobby3"]</i></li>
+        <li><i>@ViewData["Hobby4"]</i></li>
+    </ul>
+</div>
 
+<br />
+<br />
+<a href="~/Home/Index" class="btn btn-primary">Volver al inicio</a>

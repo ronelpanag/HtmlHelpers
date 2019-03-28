@@ -14,7 +14,6 @@ namespace HtmlHelpers.Controllers
             return View();
         }
 
-        [HttpGet]
         public IActionResult Formulario()
         {
             return View();
@@ -26,8 +25,7 @@ namespace HtmlHelpers.Controllers
             if (ModelState.IsValid)
             {
                 
-        
-                return RedirectToAction("Resultado");
+                return RedirectToAction("Resultado", persona);
             }
             else
             {
@@ -36,9 +34,31 @@ namespace HtmlHelpers.Controllers
         }
 
 
-        public IActionResult Resultado()
+        public IActionResult Resultado(Persona persona)
         {
-            return View();
+            ViewData["Resultado"] = "Hemos recibido los siguientes datos:";
+            if (persona.Hobby1)
+            {
+                ViewData["Hobby1"] = "Musica";
+            }
+            if (persona.Hobby2)
+            {
+                ViewData["Hobby2"] = "Tecnologia";
+            }
+            if (persona.Hobby3)
+            {
+                ViewData["Hobby3"] = "Deportes";
+            }
+            if (persona.Hobby4)
+            {
+                ViewData["Hobby4"] = "Farandula";
+            }
+            if(!persona.Hobby1 && !persona.Hobby2 && !persona.Hobby3 && !persona.Hobby4)
+            {
+                ViewData["Hobby1"] = "No tienes ningun hobby";
+            }
+
+            return View(persona);
         }
     }
 }

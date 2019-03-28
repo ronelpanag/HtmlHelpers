@@ -53,13 +53,21 @@
             <input asp-for="Telefono" class="form-control" />
         </div>
 
-        @*Estado civil ---Radio button*@
         <div class="form-group">
             <label asp-for="EstadoCivil">Estado civil</label>
             @Html.RadioButtonFor(x => x.EstadoCivil, "Soltero") Soltero
             @Html.RadioButtonFor(x => x.EstadoCivil, "Casado") Casado
             @Html.RadioButtonFor(x => x.EstadoCivil, "Viudo") Viudo
             @Html.RadioButtonFor(x => x.EstadoCivil, "Union libre") Union libre
+        </div>
+
+        <div class="form-group">
+            <label>Hobby</label>
+            @Html.CheckBoxFor(x => x.Hobby1) Musica
+            @Html.CheckBoxFor(x => x.Hobby2) Tecnologia
+            @Html.CheckBoxFor(x => x.Hobby3) Deportes
+            @Html.CheckBoxFor(x => x.Hobby4) Farandula
+
         </div>
 
         <input type="submit" class="btn btn-primary"/>

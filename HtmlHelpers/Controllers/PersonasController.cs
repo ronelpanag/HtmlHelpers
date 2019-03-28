@@ -23,7 +23,21 @@ namespace HtmlHelpers.Controllers
         [HttpPost]
         public IActionResult Formulario(Persona persona)
         {
+            if (ModelState.IsValid)
+            {
+                
+        
+                return RedirectToAction("Resultado");
+            }
+            else
+            {
+                return View(persona);
+            }
+        }
 
+
+        public IActionResult Resultado()
+        {
             return View();
         }
     }
